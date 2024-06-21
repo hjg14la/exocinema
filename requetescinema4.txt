@@ -1,0 +1,44 @@
+requetea
+SELECT film.* FROM film;
+requeteb
+SELECT film.titre 
+FROM film
+WHERE film.duree>135
+ORDER BY film.duree DESC;
+requetec
+SELECT film.nom_film,film.date_sortie 
+FROM film.id_realisateur=realisateur.id_realisateur
+WHERE realisateur.nom_realisateur="rupert"
+AND   realisateur.prenom_realisateur="sanders";
+requeted
+SELECT film.id_film FROM film,posseder
+WHERE posseder.id_genre=4
+AND posseder.id_film=film.id_film;
+requetee
+SELECT count(film.id_film) FROM film
+WHERE film.id_realisateur=1;
+requetef
+SELECT acteur.* FROM film,acteur
+WHERE film.id_film=1;
+requeteg
+SELECT film.titre FROM film,acteur,jouer
+WHERE jouer.id_film=film.id_film
+AND jouer.id_acteur=1;
+requeteh
+SELECT acteur.id_acteur FROM acteur,realisateur
+WHERE acteur.id_acteur=realisateur.id_realisateur;
+requetei
+SELECT film.id_film FROM film
+WHERE (2024-film.date_sortie)<5;
+requetej
+SELECT count(acteur.id_acteur) FROM  acteur
+GROUP BY acteur.sexe;
+requetek
+SELECT acteur.nom FROM  acteur
+WHERE (2024-acteur.date_naissance)<50;
+requetel
+SELECT COUNT(jouer.id_acteur)>3, jouer.id_acteur,acteur.nom FROM jouer,acteur
+WHERE jouer.id_acteur=acteur.id_acteur
+GROUP BY jouer.id_acteur;
+
+
